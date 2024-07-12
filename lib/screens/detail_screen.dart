@@ -311,6 +311,7 @@ import 'package:thflutter/components/custom_clip_path.dart';
 import 'package:thflutter/constants/circle_button.dart';
 import 'package:thflutter/constants/share.dart';
 import 'package:thflutter/constants/show_detail_dialog.dart';
+import 'package:thflutter/constants/show_table.dart';
 import 'package:thflutter/constants/start_cooking.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../components/ingredient_list.dart';
@@ -423,8 +424,13 @@ class _DetailScreenState extends State<DetailScreen> {
                           icon: Icons.monitor_heart_outlined, label: 'Danh mục',
                         ),
                       ),
-                      const CircleButton(
-                        icon: Icons.table_chart_outlined, label: 'Biểu đồ',
+                      GestureDetector(
+                        onTap: (){
+                          ShowTable.showTable(context);
+                        },
+                        child: const CircleButton(
+                          icon: Icons.table_chart_outlined, label: 'Biểu đồ',
+                        ),
                       ),
 
                     ],

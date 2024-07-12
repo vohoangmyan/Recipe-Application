@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thflutter/components/bottom_nav_bar.dart';
 import 'package:thflutter/screens/home_screen.dart';
 import 'package:thflutter/screens/recipe_category.dart';
+import 'package:thflutter/screens/save_screen.dart';
 import 'package:thflutter/screens/shopping_screen.dart';
 
 class Home extends StatefulWidget {
@@ -52,7 +53,7 @@ class _HomeState extends State<Home> {
         children:const [
           HomePage(),
           RecipeCategory(),
-          Center(child: Text('Page 3'),),
+          SavedScreen(),
           ShoppingScreen(),
           // Center(child: Text('Page 5'),),
         ],

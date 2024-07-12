@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:thflutter/components/custom_appbar.dart';
 class SavedScreen extends StatelessWidget {
   const SavedScreen({Key? key}) : super(key: key);
@@ -8,7 +8,7 @@ class SavedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
     final w = MediaQuery.of(context).size.width;
-    var myBox = Hive.box('saved');
+    var myBox=Hive.box('saved');
     return  Scaffold(
       appBar:const CustomAppBar(title: 'Saved', back: false),
       body: Padding(padding:const EdgeInsets.only(top: 18, right: 8, left: 8),

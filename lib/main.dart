@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:thflutter/app_state.dart';
 import 'package:thflutter/firebase_options.dart';
 import 'package:thflutter/screens/onboarding_screen.dart';
 
@@ -10,11 +13,28 @@ void main()async {
   await Hive.initFlutter();
   await Hive.openBox('shopping');
   await Hive.openBox('saved');
+  await GetStorage.init();
   await Firebase.initializeApp(
     name: "BTLon",
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  Get.put(AppController());
+  runApp(
+    const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "BTL",
+      themeMode: ThemeMode.light,
+      localizationsDelegates:  [
+        DefaultMaterialLocalizations.delegate,
+        DefaultWidgetsLocalizations.delegate,
+      ],
+      supportedLocales:  [
+        Locale('en', 'US'),
+        Locale('vi', 'VN'),
+      ],
+      home: OnBoardingScreen(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {

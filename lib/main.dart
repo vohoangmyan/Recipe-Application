@@ -1,6 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:thflutter/components/theme/theme.dart';
+import 'package:thflutter/firebase_options.dart';
 import 'package:thflutter/screens/onboarding_screen.dart';
 
 
@@ -9,6 +10,10 @@ void main()async {
   await Hive.initFlutter();
   await Hive.openBox('shopping');
   await Hive.openBox('saved');
+  await Firebase.initializeApp(
+    name: "BTLon",
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thflutter/components/drawer/my_drawer_title.dart';
 import 'package:thflutter/components/setting/setting_screen.dart';
-import 'package:thflutter/components/theme/dark_mode_button.dart';
 import 'package:thflutter/screens/home.dart';
 import 'package:thflutter/screens/profile.dart';
 

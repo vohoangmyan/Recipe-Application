@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:http/http.dart';
 import 'package:thflutter/components/custom_appbar.dart';
 
 import '../constants/share.dart';
@@ -11,7 +10,7 @@ class ShoppingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
-    final w = MediaQuery.of(context).size.width;
+    // final w = MediaQuery.of(context).size.width;
     var myBox=Hive.box('shopping');
     return Scaffold(
       appBar:const CustomAppBar(title: 'Shopping',back: false,),

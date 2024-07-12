@@ -187,6 +187,8 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:thflutter/components/setting/setting_item.dart';
 import 'package:thflutter/components/setting/setting_switch.dart';
+import 'package:thflutter/screens/profile_screen.dart';
+import 'package:thflutter/widget/appBar_widget.dart';
 
 import '../../screens/profile.dart';
 import '../forward_button.dart';
@@ -204,19 +206,15 @@ class _EditSettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const AppBarWidget(
+        title: "Settings",
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Settings",
-                style: TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               const SizedBox(height: 40),
               const Text(
                 "Account",
@@ -226,44 +224,49 @@ class _EditSettingScreenState extends State<SettingScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Image.asset("assets/images/avatar.jpg", width: 70, height: 70),
-                    const SizedBox(width: 20),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Uranus Code",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
+              InkWell(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> const ProfileScreen()));
+                },
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Row(
+                    children: [
+                      Image.asset("assets/images/avatar.jpg", width: 70, height: 70),
+                      const SizedBox(width: 20),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Uranus Code",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          "Youtube Channel",
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                        )
-                      ],
-                    ),
-                    const Spacer(),
-                    ForwardButton(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const AccountScreen(),
-                          ),
-                        );
-                      },
-                    )
-                  ],
+                          SizedBox(height: 10),
+                          Text(
+                            "Youtube Channel",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                          )
+                        ],
+                      ),
+                      const Spacer(),
+                      ForwardButton(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AccountScreen(),
+                            ),
+                          );
+                        },
+                      )
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 40),

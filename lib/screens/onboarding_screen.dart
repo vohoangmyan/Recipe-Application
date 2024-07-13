@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:thflutter/screens/login.dart';
 import 'package:thflutter/constants/images_path.dart';
 import 'package:thflutter/screens/home.dart';
 

@@ -1,5 +1,4 @@
 
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,7 @@ class ShowTable {
           return AlertDialog(
 
             contentPadding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
+            shape:const RoundedRectangleBorder(
               side: BorderSide(color: Colors.white,width: 3)
             ),
             backgroundColor:  Colors.redAccent,

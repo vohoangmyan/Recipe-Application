@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:thflutter/constants/images_path.dart';
 
 List<String> name=[
